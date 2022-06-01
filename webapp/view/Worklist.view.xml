@@ -1,0 +1,179 @@
+<mvc:View
+	controllerName="int.offlinelist.OfflineList.controller.Worklist"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<semantic:SemanticPage
+		id="page"
+		headerPinnable="false"
+		toggleHeaderOnTitleClick="false" 
+		showFooter = "true">
+
+		<semantic:titleHeading>
+			<Title text="{i18n>worklistTitle}" />
+		</semantic:titleHeading>
+
+	
+
+		<semantic:content>
+<!-- <VBox>
+	<HBox>
+		<f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+		labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+		singleContainerFullSize="false">
+		<f:content>
+			<Label text="{i18n>Operationid}"/>
+			<Input id="inputOperationid"/>
+			<Label text="{i18n>Operationname}"/>
+			<Input id="inputOperationname"></Input>
+		</f:content>
+		</f:SimpleForm>
+	</HBox> -->
+
+
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormDisplay480_Trial"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="{i18n>Verigirisi}" 
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"	
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="3"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="{i18n>Operationid}" />
+				<Input type="Number" id="inputOperationid"/>
+				<Label text="{i18n>Operationname}"/>
+				<Input id="inputOperationname"></Input>
+				<core:Title  />
+				
+			</f:content>
+		</f:SimpleForm>
+
+
+		
+			<Table
+				id="table"
+				width="auto"
+				items="{
+					path: '/OperationSet',
+					sorter: {
+						path: 'Operationid',
+						descending: false
+					}
+				}"
+				noDataText="{worklistView>/tableNoDataText}"
+				busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+				growing="true"
+				growingScrollToLoad="true"
+				updateFinished="onUpdateFinished">
+
+			
+				<!-- <headerToolbar>
+					<Toolbar>
+						<Title id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
+						<ToolbarSpacer />
+						<SearchField
+							id="searchField"
+							tooltip="{i18n>worklistSearchTooltip}"
+							search="onSearch"
+							width="auto">
+						</SearchField>
+					</Toolbar>
+
+				</headerToolbar> -->
+
+				<columns>
+					<Column>
+						<Text text="{i18n>Operationid}" id="Operationid"/>
+					</Column>
+					<Column>
+						<Text text="{i18n>Operationname}" id="Operationname"/>
+					</Column>
+					
+				</columns>
+
+				<items>
+					<ColumnListItem
+						type="Navigation" >
+						<cells>
+							<ObjectIdentifier
+								title="{Operationid}"/>
+						</cells>
+
+						<cells>
+							<ObjectIdentifier
+								title="{Operationname}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</VBox>
+
+
+		</semantic:content>
+
+
+
+		<semantic:footerCustomActions>
+			<Button text="Save" press="saveData"/>
+			<Button text="Cancel" />
+		</semantic:footerCustomActions>
+
+	</semantic:SemanticPage>
+
+
+<!-- 	<f:SimpleForm id="SimpleFormDisplay480_Trial"
+	editable="false"
+	layout="ResponsiveGridLayout"
+	title="{i18n>Verigirisi}" 
+	labelSpanXL="4"
+	labelSpanL="4"
+	labelSpanM="4"
+	labelSpanS="12"
+	adjustLabelSpan="false"	
+	emptySpanXL="0"
+	emptySpanL="0"
+	emptySpanM="0"
+	emptySpanS="0"
+	columnsXL="3"
+	columnsL="2"
+	columnsM="2"
+	singleContainerFullSize="false" >
+	<f:content>
+		<Label text="{i18n>Operationid}" />
+		<Input id="inputOpertaionid"/>
+		<Label text="{i18n>Operationname}"/>
+		<Input id="inputOperationname"></Input>
+		<core:Title  />
+		
+		<Button press="onPress"
+			activeIcon=""
+			enabled="true"
+			icon=""
+			iconDensityAware="true"
+			iconFirst="true"
+			text="{i18n>Save}"
+			textDirection="Inherit"
+			type="Accept"
+			width=""
+		>
+			
+		</Button>
+			<Label text="Disposable" />
+		<ProgressIndicator percentValue="{Disposable}" displayOnly="true" 
+	</f:content>
+</f:SimpleForm> -->
+
+</mvc:View>
